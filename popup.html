@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Live Followers</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 TikTok Live Followers</h1>
+    </div>
+
+    <div class="search-section">
+      <input
+        type="text"
+        id="usernameInput"
+        placeholder="أدخل اسم المستخدم..."
+        autocomplete="off"
+      >
+      <div id="searchStatus" class="status"></div>
+    </div>
+
+    <div id="profileSection" class="profile-section hidden">
+      <div class="profile-header">
+        <img id="profileImage" src="" alt="Profile" class="profile-image">
+        <div class="profile-info">
+          <div class="profile-name-row">
+            <h2 id="profileName"></h2>
+            <div class="action-buttons">
+              <button id="pinBtn" class="icon-btn" title="تثبيت">📌</button>
+              <button id="favoriteBtn" class="icon-btn" title="إضافة للمفضلة">🤍</button>
+            </div>
+          </div>
+          <p id="profileUsername" class="username"></p>
+        </div>
+      </div>
+
+      <div class="bio-section">
+        <p id="profileBio"></p>
+      </div>
+
+      <div class="stats-section">
+        <div class="stat-card followers-card">
+          <div class="stat-label">المتابعون</div>
+          <div id="followersCount" class="stat-value">-</div>
+          <div class="live-indicator">🔴 مباشر</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">المتابَعون</div>
+          <div id="followingCount" class="stat-value">-</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">الإعجابات</div>
+          <div id="likesCount" class="stat-value">-</div>
+        </div>
+      </div>
+
+      <div class="last-update">
+        آخر تحديث: <span id="lastUpdate">-</span>
+      </div>
+    </div>
+
+    <div id="favoritesSection" class="favorites-section">
+      <h3>المفضلة ⭐</h3>
+      <div id="favoritesList" class="favorites-list"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

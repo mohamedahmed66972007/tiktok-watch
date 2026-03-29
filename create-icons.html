@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Icons</title>
+  <style>
+    canvas { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Icon Generator</h1>
+  <p>Open console and right-click on each canvas to save images</p>
+  <canvas id="icon16" width="16" height="16"></canvas>
+  <canvas id="icon48" width="48" height="48"></canvas>
+  <canvas id="icon128" width="128" height="128"></canvas>
+
+  <script>
+    function drawIcon(canvas, size) {
+      const ctx = canvas.getContext('2d');
+
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#00F2EA');
+      gradient.addColorStop(0.5, '#FF0050');
+      gradient.addColorStop(1, '#000000');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.6}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('T', size / 2, size / 2);
+
+      document.body.appendChild(canvas);
+      canvas.style.display = 'block';
+      canvas.style.margin = '10px';
+      canvas.style.border = '1px solid #ddd';
+
+      console.log(`${canvas.id} generated - right click to save as ${canvas.id}.png`);
+    }
+
+    drawIcon(document.getElementById('icon16'), 16);
+    drawIcon(document.getElementById('icon48'), 48);
+    drawIcon(document.getElementById('icon128'), 128);
+  </script>
+</body>
+</html>

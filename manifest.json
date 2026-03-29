@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Live Follower Count",
+  "version": "1.0.0",
+  "description": "عرض عدد المتابعين الحي لحسابات TikTok",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ]
+}
